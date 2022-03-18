@@ -1,3 +1,4 @@
 # URetinex-Net: Retinex-based Deep Unfolding Network for Low-light-Image-Enhancement
-official PyTroch implementation of URetinex-Net: Retinex-based Deep Unfolding Network for Low-light-Image-Enhancement in CVPR 2022.
+Official PyTorch implementation of URetinex-Net: Retinex-based Deep Unfolding Network for Low-light-Image-Enhancement in CVPR 2022.
+
 Code will be released soon...
