@@ -28,6 +28,7 @@ Enhance results will be saved in *./demo/output* if `output_path` is not specifi
 
 
 **Citation**
+
 If you find our work useful, please cite our paper by the following:
 ```
 @InProceedings{Wu_2022_CVPR,
