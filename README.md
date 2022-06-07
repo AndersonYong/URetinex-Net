@@ -15,7 +15,7 @@ Feel free to download our pre-trained model from [Google Drive]("www.baidu.com")
 
 **Test**
 
-If you only want to process a single image, run like this (you can specify your image path)
+If you only want to process a single image, just run like this (you can specify your image path)
 ```
 python test.py --img_path "./demo/input/img.png"
 ```
@@ -27,7 +27,6 @@ python test.py --img_dir "./demo/input/sample"
 
 Enhance results will be saved in *./demo/output* if `output_path` is not specified!
 
-**Evaluate**
 
 **Citation**
 ```
