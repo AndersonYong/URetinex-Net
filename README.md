@@ -13,4 +13,14 @@ Official PyTorch implementation of URetinex-Net: Retinex-based Deep Unfolding Ne
 
 **Evaluate**
 
-**[Citation]**
+**Citation**
+```
+@InProceedings{Wu_2022_CVPR,
+    author    = {Wu, Wenhui and Weng, Jian and Zhang, Pingping and Wang, Xu and Yang, Wenhan and Jiang, Jianmin},
+    title     = {URetinex-Net: Retinex-Based Deep Unfolding Network for Low-Light Image Enhancement},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2022},
+    pages     = {5901-5910}
+}
+```
