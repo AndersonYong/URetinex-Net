@@ -29,6 +29,8 @@ Enhance results will be saved in *./demo/output* if `output_path` is not specifi
 
 **Citation**
 ```
+If you find our work useful, please cite our paper by the following:
+
 @InProceedings{Wu_2022_CVPR,
     author    = {Wu, Wenhui and Weng, Jian and Zhang, Pingping and Wang, Xu and Yang, Wenhan and Jiang, Jianmin},
     title     = {URetinex-Net: Retinex-Based Deep Unfolding Network for Low-Light Image Enhancement},
