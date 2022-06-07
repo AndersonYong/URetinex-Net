@@ -22,10 +22,10 @@ python test.py --img_path "./demo/input/img.png"
 
 Also, batch procssing is provide while a directory is specified:
 ```
-python test.py --img_dir 
+python test.py --img_dir "./demo/input/sample"
 ```
 
-Enhance results will be saved in ./demo/output if `output_path` is not specified!
+Enhance results will be saved in *./demo/output* if `output_path` is not specified!
 
 **Evaluate**
 
