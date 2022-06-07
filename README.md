@@ -8,7 +8,7 @@ Official PyTorch implementation of URetinex-Net: Retinex-based Deep Unfolding Ne
 [[Supplementary]](https://openaccess.thecvf.com/content/CVPR2022/supplemental/Wu_URetinex-Net_Retinex-Based_Deep_CVPR_2022_supplemental.pdf)
 
 ## Requirements
-  1. Python <font size="10">== 3.7.6</font>
+  1. Python == 3.7.6
   2. PyTorch == 1.4.0
   3. torchvision == 0.5.0
 
@@ -40,4 +40,4 @@ If you find our work useful, please cite our paper by the following:
     pages     = {5901-5910}
 }
 ```
-***Noted that the code is only for non-commercial use! shoule you have any queries, contact me at***  <font color=red>wj1997s@163.com</font>
+***Noted that the code is only for non-commercial use! shoule you have any queries, contact me at***  wj1997s@163.com
