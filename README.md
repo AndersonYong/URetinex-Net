@@ -7,12 +7,12 @@ Official PyTorch implementation of URetinex-Net: Retinex-based Deep Unfolding Ne
 [[Paper]](https://openaccess.thecvf.com/content/CVPR2022/papers/Wu_URetinex-Net_Retinex-Based_Deep_Unfolding_Network_for_Low-Light_Image_Enhancement_CVPR_2022_paper.pdf)
 [[Supplementary]](https://openaccess.thecvf.com/content/CVPR2022/supplemental/Wu_URetinex-Net_Retinex-Based_Deep_CVPR_2022_supplemental.pdf)
 
-**Requirements**
+## Requirements
   1. Python <font size="10">== 3.7.6</font>
   2. PyTorch == 1.4.0
   3. torchvision == 0.5.0
 
-**Test**
+## Test
 
 If you only want to process a single image, just run like this (you can specify your image path)
 ```
@@ -27,7 +27,7 @@ python test.py --img_dir "./demo/input/sample"
 Enhance results will be saved in *./demo/output* if `output_path` is not specified!
 
 
-**Citation**
+## Citation
 
 If you find our work useful, please cite our paper by the following:
 ```
