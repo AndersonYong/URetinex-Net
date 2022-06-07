@@ -14,7 +14,18 @@ Official PyTorch implementation of URetinex-Net: Retinex-based Deep Unfolding Ne
 Feel free to download our pre-trained model from [Google Drive]("www.baidu.com")
 
 **Test**
-If you only want to pre
+
+If you only want to process a single image, run like this (you can specify your image path)
+```
+python test.py --img_path "./demo/input/img.png"
+```
+
+Also, batch procssing is provide while a directory is specified:
+```
+python test.py --img_dir 
+```
+
+Enhance results will be saved in ./demo/output if `output_path` is not specified!
 
 **Evaluate**
 
