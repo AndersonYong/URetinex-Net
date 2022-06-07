@@ -20,7 +20,7 @@ If you only want to process a single image, just run like this (you can specify 
 python test.py --img_path "./demo/input/img.png"
 ```
 
-Also, batch procssing is provide while a directory is specified:
+Also, batch processing is provide while a directory is specified:
 ```
 python test.py --img_dir "./demo/input/sample"
 ```
