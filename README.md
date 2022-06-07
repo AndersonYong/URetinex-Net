@@ -9,7 +9,11 @@ Official PyTorch implementation of URetinex-Net: Retinex-based Deep Unfolding Ne
   2. PyTorch == 1.4.0
   3. torchvision == 0.5.0
 
+**Pretrained-model**
+Feel free to download our pre-trained model from [Google Drive]("www.baidu.com")
+
 **Test**
+If you only want to pre
 
 **Evaluate**
 
