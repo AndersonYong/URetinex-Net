@@ -98,6 +98,6 @@ if __name__ == "__main__":
     for k, v in vars(opts).items():
         print(k, v)
     
-    os.environ['CUDA_VISIBLE_DEVICES'] = opts.gpu_id
+    os.environ['CUDA_VISIBLE_DEVICES'] = str(opts.gpu_id)
     model = Inference(opts).cuda()
     model.run()
