@@ -90,7 +90,7 @@ if __name__ == "__main__":
     parser.add_argument('--img_path', type=str, default="./demo/input/3.png")
     parser.add_argument('--output', type=str, default="./demo/output")
     # ratio are recommended to be 3-5, bigger ratio will lead to over-exposure 
-    parser.add_argument('--ratio', type=float, default=5)
+    parser.add_argument('--ratio', type=int, default=5)
     # model path
     parser.add_argument('--Decom_model_low_path', type=str, default="./ckpt/init_low.pth")
     parser.add_argument('--unfolding_model_path', type=str, default="./ckpt/unfolding.pth")
