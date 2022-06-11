@@ -16,9 +16,9 @@ def np_save_TensorImg(img_tensor, path):
     im.save(path, 'png')
 
 def define_modelR(opts):
-    if opts.R_model == "HalfDnCNN":
-        from network.restoration import HalfDnCNN
-        model_R = HalfDnCNN(opts)
+    if opts.R_model == "HalfDnCNNSE":
+        from network.restoration import HalfDnCNNSE
+        model_R = HalfDnCNNSE(opts)
     return model_R
 
 def define_modelL(opts):
