@@ -7,7 +7,6 @@ import os
 import torchvision
 import torchvision.transforms as transforms
 from PIL import Image
-from data.preprocessing import InitailProcessing
 import time
 from utils import *
 
