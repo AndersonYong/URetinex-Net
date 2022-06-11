@@ -76,7 +76,7 @@ class Inference(nn.Module):
         name = file_name.split('.')[0]
         low_img = self.transform(Image.open(low_img_path)).unsqueeze(0)
         enhance, p_time = self.forward(input_low_img=low_img, input_high_img=None)
-        save_path = os.path.join(self.opts.output, file_name.replace(name, "%s__URetinexNet"%name))
+        save_path = os.path.join(self.opts.output, file_name.replace(name, "%s_%f_URetinexNet"%(name, ratio)))
         np_save_TensorImg(enhance, save_path)  
         print("================================= time for %s: %f============================"%(file_name, p_time))
 
