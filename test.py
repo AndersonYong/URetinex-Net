@@ -36,11 +36,6 @@ class Inference(nn.Module):
         print(self.model_L)
         print(self.adjust_model)
         #time.sleep(8)
-        
-    def get_ratio(self, high_l, low_l):
-        ratio = (low_l / (high_l + 0.0001)).mean()
-        low_ratio = torch.ones(high_l.shape).cuda() * (1/(ratio+0.0001))
-        return low_ratio
 
     def unfolding(self, input_low_img):
         for t in range(self.unfolding_opts.round):      
