@@ -21,6 +21,13 @@ python test.py --img_path "./demo/input/img.png"
 
 Enhance results will be saved in *./demo/output* if `output_path` is not specified!
 
+# Evaluate
+
+If you want to evaluate using our provided pretrained model, please download the [LOL test datasets]. And put the dataset in *./test_data*.
+Simply run 
+```
+python evaluate.py
+```
 
 ## Citation
 
