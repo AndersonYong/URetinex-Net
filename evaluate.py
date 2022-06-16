@@ -110,8 +110,8 @@ class Inference(nn.Module):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Configure')
     # specify your data path here!
-    parser.add_argument('--low_dir', type=str, default="./LOLdataset/eval15/low")
-    parser.add_argument('--high_dir', type=str, default="./LOLdataset/eval15/high")
+    parser.add_argument('--low_dir', type=str, default="./test_daat/LOLdataset/eval15/low")
+    parser.add_argument('--high_dir', type=str, default="./test_data/LOLdataset/eval15/high")
     parser.add_argument('--output', type=str, default="./demo/output/LOL")
     # ratio are recommended to be 3-5, bigger ratio will lead to over-exposure 
     # model path
