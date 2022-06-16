@@ -23,7 +23,7 @@ Enhance results will be saved in *./demo/output* if `output_path` is not specifi
 
 # Evaluate
 
-If you want to evaluate using our provided pretrained model, please download the [LOL test datasets]. And put the dataset in *./test_data*.
+If you want to evaluate using our provided pretrained model, please download the [LOL test datasets](https://daooshee.github.io/BMVC2018website/). And put the dataset in *./test_data*.
 Simply run 
 ```
 python evaluate.py
