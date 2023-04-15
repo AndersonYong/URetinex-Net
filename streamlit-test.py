@@ -11,16 +11,23 @@ import time
 from utils import *
 
 class Inference(nn.Module):
-    def __init__(self, opts):
+    def __init__(self):
         super().__init__()
-        self.opts = opts
+
+        self.Decom_model_low_path = "./ckpt/init_low.pth"
+        self.unfolding_model_path = "./ckpt/unfolding.pth"
+        self.adjust_model_path = "./ckpt/L_adjust.pth"
+        self.ratio = 3
+        self.output = "./demo/output"
+        self.img_path = "./demo/input/a3264.jpg"
+        
         # loading decomposition model 
         self.model_Decom_low = Decom()
-        self.model_Decom_low = load_initialize(self.model_Decom_low, self.opts.Decom_model_low_path)
+        self.model_Decom_low = load_initialize(self.model_Decom_low, self.Decom_model_low_path)
         # loading R; old_model_opts; and L model
-        self.unfolding_opts, self.model_R, self.model_L= load_unfolding(self.opts.unfolding_model_path)
+        self.unfolding_opts, self.model_R, self.model_L= load_unfolding(self.unfolding_model_path)
         # loading adjustment model
-        self.adjust_model = load_adjustment(self.opts.adjust_model_path)
+        self.adjust_model = load_adjustment(self.adjust_model_path)
         self.P = P()
         self.Q = Q()
         transform = [
@@ -43,7 +50,7 @@ class Inference(nn.Module):
         return R, L
     
     def lllumination_adjust(self, L, ratio):
-        ratio = torch.ones(L.shape).to(self.device) * self.opts.ratio
+        ratio = torch.ones(L.shape).to(self.device) * self.ratio
         return self.adjust_model(l=L, alpha=ratio)
     
     def forward(self, input_low_img):
@@ -51,38 +58,22 @@ class Inference(nn.Module):
         with torch.no_grad():
             start = time.time()  
             R, L = self.unfolding(input_low_img)
-            High_L = self.lllumination_adjust(L, self.opts.ratio)
+            High_L = self.lllumination_adjust(L, self.ratio)
             I_enhance = High_L * R
             p_time = (time.time() - start)
         return I_enhance, p_time
 
-    def run(self, low_img_path):
-        file_name = os.path.basename(self.opts.img_path)
-        name = file_name.split('.')[0]
-        low_img = self.transform(Image.open(low_img_path)).unsqueeze(0)
-        enhance, p_time = self.forward(input_low_img=low_img)
-        if not os.path.exists(self.opts.output):
-            os.makedirs(self.opts.output)
-        save_path = os.path.join(self.opts.output, file_name.replace(name, "%s_%d_URetinexNet"%(name, self.opts.ratio)))
+    def runforstreamlit(image):
+        
+        # Load the image
+        img = self.transform(image)
+        img = img.unsqueeze(0)
+        enhance, p_time = self.forward(input_low_img=img)
+        if not os.path.exists(self.output):
+            os.makedirs(self.output)
+        save_path = os.path.join(self.output, "1.png")
         np_save_TensorImg(enhance, save_path)  
-        print("================================= time for %s: %f============================"%(file_name, p_time))
-
+        result = Image.open(save_path)
+        return result
     
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='Configure')
-    # specify your data path here!
-    parser.add_argument('--img_path', type=str, default="./demo/input/a3264.jpg")
-    parser.add_argument('--output', type=str, default="./demo/output")
-    # ratio are recommended to be 3-5, bigger ratio will lead to over-exposure 
-    parser.add_argument('--ratio', type=int, default=3)
-    # model path
-    parser.add_argument('--Decom_model_low_path', type=str, default="./ckpt/init_low.pth")
-    parser.add_argument('--unfolding_model_path', type=str, default="./ckpt/unfolding.pth")
-    parser.add_argument('--adjust_model_path', type=str, default="./ckpt/L_adjust.pth")
-    parser.add_argument('--gpu_id', type=int, default=0)
-    
-    opts = parser.parse_args()
-    
-    os.environ['CUDA_VISIBLE_DEVICES'] = str(opts.gpu_id)
-    model = Inference(opts).cuda()
-    model.run(opts.img_path)
+model = Inference()
