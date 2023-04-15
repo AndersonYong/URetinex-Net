@@ -1,5 +1,5 @@
 import streamlit as st
-import streamlit_test
+import streamlit-test
 from PIL import Image
 from io import BytesIO
 import base64
@@ -27,7 +27,7 @@ def fix_image(upload):
     col1.write("Original Image :camera:")
     col1.image(image)
 
-    fixed = streamlit_test.model.runforstreamlit(image)
+    fixed = streamlit-test.model.runforstreamlit(image)
     col2.write("Ehanced Image :wrench:")
     col2.image(fixed)
     st.sidebar.markdown("\n")
@@ -40,4 +40,4 @@ my_upload = st.sidebar.file_uploader("Upload an image", type=["png", "jpg", "jpe
 if my_upload is not None:
     fix_image(upload=my_upload)
 else:
-    fix_image("./demo_images/3.png")
+    fix_image(streamlit-test.model.img_path)
