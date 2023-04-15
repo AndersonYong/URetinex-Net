@@ -18,7 +18,7 @@ class Inference(nn.Module):
         self.adjust_model_path = "./ckpt/L_adjust.pth"
         self.ratio = 3
         self.output = "./demo/output"
-        self.img_path = "./demo/input/a3264.jpg"
+        self.img_path = "./demo/input/3.png"
         
         # loading decomposition model 
         self.model_Decom_low = Decom()
