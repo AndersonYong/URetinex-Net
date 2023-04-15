@@ -37,7 +37,7 @@ def define_modelA(opts):
 
 def load_initialize(model, decom_model_path):
     if os.path.exists(decom_model_path):
-        checkpoint_Decom_low = torch.load(decom_model_path)
+        checkpoint_Decom_low = torch.load(decom_model_path,map_location=torch.device('cpu'))
         model.load_state_dict(checkpoint_Decom_low['state_dict']['model_R'])
         # to freeze the params of Decomposition Model
         for param in model.parameters():
@@ -49,7 +49,7 @@ def load_initialize(model, decom_model_path):
 
 def load_unfolding(unfolding_model_path):
     if os.path.exists(unfolding_model_path):
-        checkpoint = torch.load(unfolding_model_path)
+        checkpoint = torch.load(unfolding_model_path,map_location=torch.device('cpu'))
         old_opts = checkpoint["opts"]
         model_R = define_modelR(old_opts)
         model_L = define_modelL(old_opts)
@@ -66,7 +66,7 @@ def load_unfolding(unfolding_model_path):
 
 def load_adjustment(adjust_model_path):
     if os.path.exists(adjust_model_path):
-        checkpoint_Adjust = torch.load(adjust_model_path)
+        checkpoint_Adjust = torch.load(adjust_model_path,map_location=torch.device('cpu'))
         model_A = define_modelA(checkpoint_Adjust['opts'])
         model_A.load_state_dict(checkpoint_Adjust['state_dict']['model_A'])
         print(" ===========>  loading pretrained Illumination Adjustment Model from: %s " % adjust_model_path)
