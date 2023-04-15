@@ -4,6 +4,7 @@ from PIL import Image
 from io import BytesIO
 import base64
 
+
 st.set_page_config(layout="wide", page_title="Low Light Image Enhancement")
 
 st.write("## Enhance your low light image")
