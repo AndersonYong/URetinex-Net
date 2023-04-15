@@ -1,5 +1,5 @@
 import streamlit as st
-
+import streamlit_test
 from PIL import Image
 from io import BytesIO
 import base64
@@ -27,8 +27,7 @@ def fix_image(upload):
     col1.write("Original Image :camera:")
     col1.image(image)
 
-    # fixed = image_adaptive_lut_evaluation.runforstreamlit(image)
-    fixed = evaluation_LOL.runforstreamlit(image)
+    fixed = streamlit_test.model.runforstreamlit(image)
     col2.write("Ehanced Image :wrench:")
     col2.image(fixed)
     st.sidebar.markdown("\n")
