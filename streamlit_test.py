@@ -67,11 +67,13 @@ class Inference(nn.Module):
         img = self.transform(image)
         img = img.unsqueeze(0)
         enhance, p_time = self.forward(input_low_img=img)
-        if not os.path.exists(self.output):
-            os.makedirs(self.output)
-        save_path = os.path.join(self.output, "1.png")
-        np_save_TensorImg(enhance, save_path)  
-        result = Image.open(save_path)
-        return result
+#         if not os.path.exists(self.output):
+#             os.makedirs(self.output)
+#         save_path = os.path.join(self.output, "1.png")
+#         np_save_TensorImg(enhance, save_path)  
+#         result = Image.open(save_path)
+        img = np.squeeze(enhance.cpu().permute(0, 2, 3, 1).numpy())
+        im = Image.fromarray(np.clip(img*255, 0, 255.0).astype('uint8'))
+        return im
     
 model = Inference()
