@@ -62,8 +62,7 @@ class Inference(nn.Module):
             p_time = (time.time() - start)
         return I_enhance, p_time
 
-    def runforstreamlit(image):
-        
+    def runforstreamlit(self,image):
         # Load the image
         img = self.transform(image)
         img = img.unsqueeze(0)
