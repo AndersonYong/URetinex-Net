@@ -1,3 +1,6 @@
+# News: enhanced version has been released!
+See [URetinex-Net++](https://github.com/AndersonYong/URetinex-Net-PLUS). We release training code of URetinex-Net++, which share the decomposition module and unfolding module with URetinex-Net, enjoy!
+
 # URetinex-Net: Retinex-based Deep Unfolding Network for Low-light-Image-Enhancement
 Official PyTorch implementation of URetinex-Net: Retinex-based Deep Unfolding Network for Low-light-Image-Enhancement in CVPR 2022.
 
